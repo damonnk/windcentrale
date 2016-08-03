@@ -1,0 +1,26 @@
+<id>
+	<N>
+		<int>0</int>
+	</N>
+	<NO>
+		<int>45</int>
+	</NO>
+	<O>
+		<int>90</int>
+	</O>
+	<ZO>
+		<int>135</int>
+	</ZO>
+	<Z>
+		<int>180</int>
+	</Z>
+	<ZW>
+		<int>225</int>
+	</ZW>
+	<W>
+		<int>270</int>
+	</W>
+	<NW>
+		<int>315</int>
+	</NW>
+</id>
