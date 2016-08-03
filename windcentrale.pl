@@ -56,7 +56,7 @@ for my $molen (keys %$molens ) {
 	my @values = split /,/, $string;
 	my $windpower = $values[0];
 	my $totalyield = $values[1];
-	my $myyield = $totalyield / $totalwindshares * 1000;
+	my $myyield = $values[2];
 	my $power=$values[3];
 
 	my @windforcevalues = split / /, $values[0];
