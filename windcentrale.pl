@@ -6,6 +6,7 @@ use LWP::UserAgent;
 use HTTP::Request;
 use IO::Socket;
 use XML::Simple;
+use JSON qw(decode_json);
 
 # Config for graphite host
 my $graph_host = '10.0.0.18';
@@ -29,6 +30,7 @@ my $windmap = $xml2->XMLin($windmapfile);
 for my $molen (keys %$molens ) {
 	my $url1 = $molens->{$molen}{'url1'};
 	my $url2 = $molens->{$molen}{'url2'};
+	my $url3 = $molens->{$molen}{'url3'};
 
 	my $ua = new LWP::UserAgent;
 	$ua->agent("Perl API Client/1.0");
@@ -39,6 +41,10 @@ for my $molen (keys %$molens ) {
 	$request = HTTP::Request->new("GET" => $url2);
 	$response = $ua->request($request);
 	my $string=$response->content;
+
+	$request = HTTP::Request->new("GET" => $url3);
+	$response = $ua->request($request);
+	my $json= decode_json($response->content);
 
 	#Calc from url
 	my $totalwindshares = $xml->{'productie'}{'winddelen'};
@@ -63,6 +69,9 @@ for my $molen (keys %$molens ) {
 	my $winddirectionstring = $windforcevalues[0];
 	my $windforce = $windforcevalues[1];
 	my $winddirection = $windmap->{$winddirectionstring}{'int'};
+
+	#Calc from url3
+	# my ...
 
 	my $socket = IO::Socket::INET -> new(PeerAddr => $graph_host,
 					  				    PeerPort => $graph_port,
