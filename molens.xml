@@ -2,41 +2,51 @@
 	<groteGeert>
 		<url1>https://zep-api.windcentrale.nl/production/1</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_1.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/1/live</url3>
 	</groteGeert>
 	<jongeHeld>
 		<url1>https://zep-api.windcentrale.nl/production/2</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_2.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/21/live</url3>
 	</jongeHeld>
 	<rodeHert>
 		<url1>https://zep-api.windcentrale.nl/production/31</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_31.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/31/live</url3>
 	</rodeHert>
 	<rankeZwaan>
 		<url1>https://zep-api.windcentrale.nl/production/41</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_41.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/41/live</url3>
 	</rankeZwaan>
 	<witteJuffer>
 		<url1>https://zep-api.windcentrale.nl/production/51</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_51.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/51/live</url3>
 	</witteJuffer>
 	<bonteHen>
 		<url1>https://zep-api.windcentrale.nl/production/111</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_111.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/111/live</url3>
 	</bonteHen>
 	<trouweWachter>
 		<url1>https://zep-api.windcentrale.nl/production/121</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_121.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/121/live</url3>
 	</trouweWachter>
 	<blauweReiger>
 		<url1>https://zep-api.windcentrale.nl/production/131</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_131.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/131/live</url3>
 	</blauweReiger>
 	<vierWinden>
 		<url1>https://zep-api.windcentrale.nl/production/141</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_141.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/141/live</url3>
 	</vierWinden>
 	<boerenZwaluw>
 		<url1>https://zep-api.windcentrale.nl/production/191</url1>
 		<url2>http://backend.windcentrale.nl/windcentrale/productie_191.txt</url2>
+		<url3>https://zep-api.windcentrale.nl/production/201/live</url3>
 	</boerenZwaluw>
 </id>
