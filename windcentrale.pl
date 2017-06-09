@@ -18,7 +18,6 @@ my $scriptdir = "/data2/scripts/wind/";
 my $file = "$scriptdir/molens.xml";
 my $xml = new XML::Simple;
 my $molens = $xml->XMLin($file);
-#print Dumper $molens;
 
 # read XML with winddirection info
 my $windmapfile = "$scriptdir/windmap.xml";
@@ -38,10 +37,6 @@ for my $molen (keys %$molens ) {
 	my $response = $ua->request($request);
 	my $xml=XMLin($response->content);
 
-	$request = HTTP::Request->new("GET" => $url2);
-	$response = $ua->request($request);
-	my $string=$response->content;
-
 	$request = HTTP::Request->new("GET" => $url3);
 	$response = $ua->request($request);
 	my $json= decode_json($response->content);
@@ -58,22 +53,16 @@ for my $molen (keys %$molens ) {
 	my $weektotal = $weeksum / $totalwindshares;
 	my $yeartotal = $yearsum / $totalwindshares;
 
-	#Calc from url2
-	my @values = split /,/, $string;
-	my $windpower = $values[0];
-	my $totalyield = $values[1];
-	my $myyield = $values[2];
-	my $power=$values[3];
-
-	my @windforcevalues = split / /, $values[0];
-	my $winddirectionstring = $windforcevalues[0];
-	my $windforce = $windforcevalues[1];
-	my $winddirection = $windmap->{$winddirectionstring}{'int'};
-
 	#Calc from url3
 	my $runpercentage = $json->{'runPercentage'};
 	my $kwhforecast = $json->{'kwhForecast'};
 	my $yearpercentage = (( $yeartotal * $totalwindshares ) / $kwhforecast ) * 100;
+	my $totalyield = $json->{'powerAbsTot'};
+	my $myyield = $json->{'powerAbsWd'};
+	my $power = $json->{'powerRel'};
+	my $windforce = $json->{'windSpeed'};
+	my $winddirectionstring = $json->{'windDirection'};
+	my $winddirection = $windmap->{$winddirectionstring}{'int'};
 
 	my $socket = IO::Socket::INET -> new(PeerAddr => $graph_host,
 					  				    PeerPort => $graph_port,
