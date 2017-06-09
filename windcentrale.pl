@@ -81,5 +81,6 @@ for my $molen (keys %$molens ) {
 	print $socket "$tag.$molen.direction $winddirection $epoch\n";
 	print $socket "$tag.$molen.runpercentage $runpercentage $epoch\n";
 	print $socket "$tag.$molen.yearpercentage $yearpercentage $epoch\n";
+	print $socket "$tag.$molen.totalwindshares $totalwindshares $epoch\n";
 	close($socket);
 }
