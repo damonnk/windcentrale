@@ -1,1 +1,2 @@
-*/1 * * * *	root perl /path/to/windcentrale.pl
+# Cron rule. Change the user to the user who should run the script
+*/1 * * * *	user perl /path/to/windcentrale.pl
