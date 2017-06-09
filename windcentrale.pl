@@ -71,7 +71,9 @@ for my $molen (keys %$molens ) {
 	my $winddirection = $windmap->{$winddirectionstring}{'int'};
 
 	#Calc from url3
-	# my ...
+	my $runpercentage = $json->{'runPercentage'};
+	my $kwhforecast = $json->{'kwhForecast'};
+	my $yearpercentage = (( $yeartotal * $totalwindshares ) / $kwhforecast ) * 100;
 
 	my $socket = IO::Socket::INET -> new(PeerAddr => $graph_host,
 					  				    PeerPort => $graph_port,
@@ -88,5 +90,7 @@ for my $molen (keys %$molens ) {
 	print $socket "$tag.$molen.yield $myyield $epoch\n";
 	print $socket "$tag.$molen.totalyield $totalyield $epoch\n";
 	print $socket "$tag.$molen.direction $winddirection $epoch\n";
+	print $socket "$tag.$molen.runpercentage $runpercentage $epoch\n";
+	print $socket "$tag.$molen.yearpercentage $yearpercentage $epoch\n";
 	close($socket);
 }
